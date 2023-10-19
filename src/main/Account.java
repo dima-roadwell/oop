@@ -31,7 +31,7 @@ public class Account {
                         this.balance += (Double)amount;
                         break;
                     case "take":
-                        if(this.balance < (Double)amount + tax) {
+                        if(this.balance < (Double)amount + ((Double)amount * tax)) {
                             resultReport = "На Вашем балансе недостаточно средств!";
                         } else {
                             this.balance -= (Double)amount + ((Double)amount * tax);
