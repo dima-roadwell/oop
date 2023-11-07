@@ -29,10 +29,10 @@ public class Box<T extends Fruit> implements Iterable<T>{
         return this.boxWeight;
       }
   
-      public void move(Box<Apple> box) { 
+      public void move(Box<? super T> box) { 
         
         for(int i = 0; i < this.box.size(); i++) {
-            box.add((Apple) this.box.get(i));
+            box.add(this.box.get(i));
             this.box.remove(i);
         }
       }
